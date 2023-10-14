@@ -1,13 +1,18 @@
 <?php
 
-$array = ['adf', 12, true, 5];
-var_dump($array);
-var_dump($array[1]);
-$array[] = 'hello';
-var_dump($array);
-$array = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9],
-];
-var_dump($array);
+$obj = new stdClass();
+$obj->name = 'Kaspar';
+$obj->nage = 30; 
+var_dump($obj);
+
+function hello() {
+    echo "hello world";
+}
+hello();
+
+function sum($a, $b) {
+    return $a+$b;
+}
+$answer = sum(1,2);
+var_dump($answer);
+var_dump(sum(3,5));
