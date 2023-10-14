@@ -1,19 +1,29 @@
 <?php
 
-class Box {
-    public $width;
-    public $height;
-    public $length;
-
-    public function volume(){
-        return $this->width * $this->height * $this->length;
+class Job {
+    public function work(Logger $Logger){
+        for($i=0; $i<0; $i++){
+            $logger->log($i);
+        }
     }
 }
 
-$box = new Box();
-$box->width = 10; 
-$box->height = 10; 
-$box->length = 10;
-$volume = $box->volume();
-var_dump($volume);
-var_dump($box);
+class ConsoleLogger implements Logger {
+    public function log($text){
+        echo $i . "\n";
+    }
+}
+
+interface Logger {
+    public function log($text);
+}
+// kasutaja kood
+
+class NothingLogger implements Logger {
+    public function log($text){
+
+    }
+}
+$job = new Job();
+$logger = new ConsoleLogger();
+$job->work($logger);
